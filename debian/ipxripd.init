@@ -1,0 +1,46 @@
+#! /bin/sh
+#
+# This file was automatically customized by debmake on Jan 9, 1997.
+#
+# Written by Miquel van Smoorenburg <miquels@drinkel.ow.org>.
+# Modified for Debian GNU/Linux by Ian Murdock <imurdock@gnu.ai.mit.edu>.
+# Modified for Debian by Christoph Lameter <clameter@debian.org>
+
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+DAEMON=/usr/sbin/ipxd
+
+test -f $DAEMON || exit 0
+
+# Set run_ipxripd to 1 to start ipxripd at boot time, or to 0 to disable it.
+run_ipxripd=1
+
+if [ $run_ipxripd = 0 ]; then
+	echo "IPX RIP/SAP daemon is disabled. Edit /etc/init.d/ipxripd to enable"
+	exit 0
+fi
+
+case "$1" in
+	start)
+		echo -n "Starting the IPX RIP/SAP daemon: ipxd"
+		start-stop-daemon --start --exec $DAEMON
+		echo "."
+		;;
+	stop)
+		echo -n "Stopping the IPX RIP/SAP daemon: ipxd"
+		start-stop-daemon --stop --exec $DAEMON
+		echo "."
+		;;
+	restart|force-reload)
+		echo -n "Restarting the IPX RIP/SAP daemon..."
+		start-stop-daemon --stop --exec $DAEMON
+		sleep 2
+		start-stop-daemon --start --exec $DAEMON
+		echo " done."
+		;;
+	*)
+		echo "Usage: /etc/init.d/$0 {start|stop|restart}"
+		exit 1
+		;;
+esac
+
+exit 0

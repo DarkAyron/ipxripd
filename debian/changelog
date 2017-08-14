@@ -1,0 +1,122 @@
+ipxripd (0.7-13.1) unstable; urgency=low
+
+  * NMU.
+  * Add Build-Depends on debhelper.  Closes: #189900.
+
+ -- Daniel Schepler <schepler@debian.org>  Fri,  1 Aug 2003 23:33:21 -0700
+
+ipxripd (0.7-13) unstable; urgency=low
+
+  * Fix typo in init.d script. Thanks to Kurt Huwig <k.huwig@iku-ag.de>.
+
+ -- Eloy A. Paris <peloy@debian.org>  Thu, 16 Jan 2003 10:30:50 -0500
+
+ipxripd (0.7-12) unstable; urgency=low
+
+  * Patch from LaMont Jones <lamont@smallone.fc.hp.com> to fix
+    failed builds on HPPA. (Closes: #141918)
+
+ -- Eloy A. Paris <peloy@debian.org>  Tue,  9 Apr 2002 09:12:24 -0400
+
+ipxripd (0.7-11) unstable; urgency=low
+
+  * Defining IPXNet as u_int32_t instead of 'unsigned long int' so
+    we don't break 64-bit architectures. (Closes: #80557)
+
+ -- Eloy A. Paris <peloy@debian.org>  Wed,  3 Apr 2002 23:20:16 -0500
+
+ipxripd (0.7-10) unstable; urgency=low
+
+  * Move man pages from /usr/man/ to /usr/share/man/. Thanks to
+    Chris Tillman <tillman@azstarnet.com> for the patch and
+    to Martin Michlmayr <tbm@cyrius.com> for reminding me to
+    perform my duties. (Closes: #91183, #126995)
+
+ -- Eloy A. Paris <peloy@debian.org>  Wed,  3 Apr 2002 22:34:59 -0500
+
+ipxripd (0.7-9) unstable; urgency=low
+
+  * Transition from suidmanager to dpkg-statoverride.
+
+ -- Eloy A. Paris <peloy@debian.org>  Fri, 19 Jan 2001 00:11:14 -0500
+
+ipxripd (0.7-8) unstable; urgency=low
+
+  * ipxripd now depends on ipx.
+    Closes: #82622: ipxripd: ipxripd does not depend on package ipx.
+
+ -- Eloy A. Paris <peloy@debian.org>  Thu, 18 Jan 2001 18:43:23 -0500
+
+ipxripd (0.7-7) unstable; urgency=low
+
+  * Applied patch from Roman Hodek <Roman.Hodek@informatik.uni-erlangen.de>
+    to be able to compile and build in a glibc2 environment (the m68k
+    folks seem to be in this environment still). This closes big #39663
+    (Can't compile under glibc2.0).
+
+ -- Eloy A. Paris <peloy@debian.org>  Thu, 17 Jun 1999 09:08:12 -0400
+
+ipxripd (0.7-6) unstable; urgency=low
+
+  * Compiled against glibc2.1.
+  * Applied Christian Meder <meder@isr.uni-stuttgart.de> and
+    Konstantinos Margaritis <markos@debian.org> patches for glibc2.1
+    This closes bug #38735 (ipxripd glibc bug) and #31921 (ipxripd: Fixes 
+    for glibc2.1).
+  * Building now with debhelper.
+
+ -- Eloy A. Paris <peloy@debian.org>  Tue, 15 Jun 1999 14:49:45 -0400
+
+ipxripd (0.7-5.1) frozen unstable; urgency=low
+
+  * non maintainer, sparc only upload
+  * fix initializer element not constant bugs with glibc2.1
+  * don't include linux headers with glibc2.1
+
+ -- Christian Meder <meder@isr.uni-stuttgart.de>  Tue,  5 Jan 1999 12:48:14 +0100
+
+ipxripd (0.7-5) unstable; urgency=low
+
+  * Added a variable called "run_ipxripd" to /etc/init.d/ipxripd to control
+    whether ipxd should be run at boot time or not. The default is set
+    to 1, so ipxripd always runs at boot.
+  * Created the prerm, postinst and postrm scripts. Before they were being
+    created by debstd, and I don't like when programs do things behind my
+    back.
+  * Re-worked debian/rules a bit.
+  * Made /etc/init.d/ipxripd a conffile.
+  * Made /etc/init.d/ipxripd honor restart and force-reload.
+
+ -- Eloy A. Paris <peloy@debian.org>  Sun, 26 Jul 1998 13:05:24 -0400
+
+ipxripd (0.7-4) unstable; urgency=low
+
+  * Fixes bugs #14414 (copyright should not be compressed) and
+    #14902 (includes entire GPL in copyright instead of a reference to it).
+
+ -- Eloy A. Paris <peloy@debian.org>  Sun, 16 Nov 1997 01:02:49 -0400
+
+ipxripd (0.7-3) unstable; urgency=low
+
+  * Installing man pages with permissions 644 instead of 755.
+  * Fixes bug #12402 (bad conffiles list)
+  * New maintainer (Eloy A. Paris <peloy@debian.org>).
+
+ -- Eloy A. Paris <peloy@debian.org>  Wed, 10 Sep 1997 22:55:37 -0400
+
+ipxripd (0.7-2) unstable; urgency=low
+
+  * Compiled with libc6.
+  * Upgraded to standards version 2.2.0.0.
+
+ -- Christian Schwarz <schwarz@debian.org>  Sun, 13 Jul 1997 22:33:16 +0200
+
+ipxripd (0.7-1) unstable; urgency=low
+
+  * Initial Release.
+
+ -- Christian Schwarz <schwarz@debian.org>  Thu, 9 Jan 1997 12:39:36 +0100
+
+Local variables:
+mode: debian-changelog
+End:

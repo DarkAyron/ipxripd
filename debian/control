@@ -1,0 +1,13 @@
+Source: ipxripd
+Section: net
+Priority: extra
+Maintainer: Eloy A. Paris <peloy@debian.org>
+Build-Depends: debhelper (>= 3)
+Standards-Version: 2.5.0
+
+Package: ipxripd
+Architecture: any
+Depends: ${shlibs:Depends}
+Description: IPX RIP/SAP daemon
+ ipxripd is a RIP/SAP daemon program for Linux.
+ It makes your Linux computer act as an IPX router.

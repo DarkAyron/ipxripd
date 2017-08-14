@@ -1,0 +1,7 @@
+23 May 2014:
+	changed /proc/net/ipx_* to /proc/net/ipx/*
+
+23 May 2014:
+	pulled from the debian repository
+	see debian/changelog for changes from original version
+
