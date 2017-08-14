@@ -1,3 +1,6 @@
+14 Aug 2017:
+	Responses to SAP general requests are filtered from local services.
+
 23 May 2014:
 	changed /proc/net/ipx_* to /proc/net/ipx/*
 

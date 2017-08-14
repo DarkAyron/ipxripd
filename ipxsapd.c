@@ -283,9 +283,13 @@ handle_sap_request(struct sap_entry *se, struct ipx_interface *src_ifc)
 	{
 		if (ipx_sap_type_equal(cur->type, ntohs(se->ser_type)))
 		{
-			ipx_sap_output_response(&(src_ifc->s_output),
+			if (cur->addr.sipx_network !=
+				src_ifc->s_output.dest_addr.sipx_network)
+			{
+				ipx_sap_output_response(&(src_ifc->s_output),
 						cur->type, cur->name,
 						&(cur->addr), cur->hops, 0);
+			}
 		}
 	}
 }
